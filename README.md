@@ -87,17 +87,35 @@ rsvp-manager/
 - Node.js (v16+)
 - npm
 
-### Install
+### Install and Build
 
 ```bash
+# Install dependencies
 npm install
+
+# Clean any previous builds
+npm run clean
+
+# Build the project
+npm run build
+
+# Run the compiled demo
+npm start
 ```
 
-### Run Demo
+For development with quick iteration:
 
 ```bash
+# Clean, build and run in one command
+npm run clean && npm run build && npm start
+
+# Or use the dev script for a faster workflow
 npm run dev
 ```
+
+### Common Issues
+
+If you encounter errors with missing modules in the `dist` directory, ensure you've properly compiled the project with the correct TypeScript configuration. The directory structure after building should contain JavaScript files in `dist/src`.
 
 ## 🧪 Testing
 
@@ -151,12 +169,13 @@ const counts = await rsvpService.countResponses();
 | Script | Description |
 |--------|-------------|
 | `npm run build` | Compile TypeScript to JavaScript |
-| `npm run dev` | Build and run the demo |
+| `npm start` | Run the compiled demo from `/dist` |
+| `npm run dev` | Build and run the demo in one step |
+| `npm run clean` | Remove build artifacts (/dist) |
 | `npm test` | Run unit tests |
 | `npm run test:coverage` | Show test coverage report |
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run lint` | Run ESLint for code quality |
-| `npm run clean` | Remove build artifacts (/dist) |
 
 ## 👤 Author
 
